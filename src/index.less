@@ -118,6 +118,7 @@ a {
 #ad_c1,
 #ad_c2,
 .c_ad_block,
+.under-post-card,
 #under_post_news,
 #under_post_kb,
 #author_profile,
@@ -700,7 +701,7 @@ a {
 
 #topics {
   .postTitle {
-    font-size: 21px;
+    font-size: 23px;
     font-weight: inherit;
   }
 
@@ -711,6 +712,7 @@ a {
     a {
       color: var(--theme-color);
       position: relative;
+      word-break: break-all;
 
       &:after {
         content: "";
@@ -732,27 +734,27 @@ a {
     }
 
     h1 {
-      font-size: 21px;
+      font-size: 22px;
     }
 
     h2 {
-      font-size: 20px;
+      font-size: 21px;
     }
 
     h3 {
-      font-size: 19px;
+      font-size: 20px;
     }
 
     h4 {
-      font-size: 18px;
+      font-size: 19px;
     }
 
     h5 {
-      font-size: 17px;
+      font-size: 18px;
     }
 
     h6 {
-      font-size: 16px;
+      font-size: 17px;
     }
 
     p {
@@ -785,7 +787,7 @@ a {
 
     img {
       display: block;
-      margin: 15px 0px 30px 0px;
+      margin: 15px auto;
       border-radius: 3px;
       box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15),
         0 0 1px rgba(106, 115, 125, 0.35);
@@ -844,11 +846,14 @@ a {
       font-family: consolas !important;
       vertical-align: middle;
       margin: 0 3px;
+      color: var(--theme-color);
       background-color: var(--code-bg-color) !important;
       font-size: 14px !important;
       padding: 0.2em 0.3em !important;
       border-radius: 3px !important;
       border: none !important;
+      display: inline;
+      white-space: pre-wrap;
     }
 
     #BlogPostCategory,
@@ -1082,6 +1087,9 @@ a {
   }
 
   .diggit {
+    float: right;
+    margin-right: 15px;
+
     &::before {
       content: "\f087";
       font-family: FontAwesome;
@@ -1090,6 +1098,7 @@ a {
   }
 
   .buryit {
+    display: none;
     margin-left: 15px;
 
     &::before {
