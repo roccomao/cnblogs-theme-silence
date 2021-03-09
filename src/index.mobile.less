@@ -1,3 +1,6 @@
+@mobile-parent-width: 100px;
+@mobile-children-width: 100px;
+
 @media only screen and (max-width: 1365px) {
   .github-corner {
     display: none;
@@ -39,7 +42,7 @@
           background: var(--blog-bg-color);
           height: 34px;
           line-height: 34px;
-          width: 130px;
+          width: @mobile-parent-width;
           border-bottom: 1px solid var(--border-color);
           border-right: 1px solid var(--border-color);
           padding: 0px;
@@ -61,9 +64,9 @@
 
           .esa-sub-navs {
             position: fixed;
-            width: 130px;
+            width: @mobile-children-width;
             top: 0px;
-            left: 130px;
+            left: @mobile-parent-width;
             top: 61px;
 
             .caret {
