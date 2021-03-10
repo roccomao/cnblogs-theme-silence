@@ -159,8 +159,33 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  #taglist_main table tr td {
+    padding: 5px 20px 5px 0px !important;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 980px) {
+@media only screen and (max-width: 768px) {
+  #taglist_main {
+    table {
+      padding-bottom: 15px;
+      display: block;
+      overflow-x: auto;
+      border: none;
+      max-height: none;
+      white-space: nowrap;
+
+      &::-webkit-scrollbar {
+        height: 1px !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--theme-color) !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: var(--text-color) !important;
+      }
+    }
+  }
 }
