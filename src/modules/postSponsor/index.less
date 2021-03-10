@@ -14,7 +14,7 @@
 
   .box {
     position: absolute;
-    left: calc(50% - 101px);
+    left: calc(50% - 68px);
     border: 1px solid var(--border-color);
     border-radius: 4px;
 
@@ -23,7 +23,6 @@
       float: left;
       margin: 0 !important;
       text-align: center;
-      border-left: 1px solid var(--border-color);
       background: transparent;
       transition: background 0.3s ease;
       cursor: pointer;
@@ -41,8 +40,13 @@
         background: var(--panel-bg-color);
       }
 
-      &:first-child {
-        border-width: 0;
+      &.paypal {
+        display: none;
+        border-right: 1px solid var(--border-color);
+      }
+
+      &.alipay {
+        border-right: 1px solid var(--border-color);
       }
     }
   }
