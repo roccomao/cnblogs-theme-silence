@@ -153,10 +153,6 @@
     bottom: calc(50% - 67px) !important;
     border-radius: 15px !important;
   }
-
-  .esa-toolbar .contents {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -181,5 +177,15 @@
         background-color: var(--text-color) !important;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .esa-contents {
+    width: 216px !important;
+  }
+
+  .esa-contents.noactive {
+    transform: translate3d(216px, 0, 0) !important;
   }
 }

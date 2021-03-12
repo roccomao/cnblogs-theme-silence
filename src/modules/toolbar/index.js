@@ -49,17 +49,9 @@ function buildToolbar() {
     const $skinPopup = $('.skin-popup');
     var skinPopEl = document.getElementsByClassName('skin-popup')[0];
 
-    let show = false;
-    $toolbar.find('.bars').click(function () {
-        if (!show) {
-            $toolbar.find('.bars').addClass('bars-show');
-            $toolbar.find('.up').addClass('up-show');
-            $toolbar.find('.mode').addClass('mode-show');
-            $toolbar.find('.skin').addClass('skin-show');
-            if (showContents) {
-                $toolbar.find('.contents').addClass('contents-show');
-            }
-        } else {
+    $toolbar.find('.bars').click(function(e) {
+        e.stopPropagation();
+        if ($('.bars').hasClass('bars-show')) {
             $toolbar.find('.bars').removeClass('bars-show');
             $toolbar.find('.up').removeClass('up-show');
             $toolbar.find('.mode').removeClass('mode-show');
@@ -67,8 +59,15 @@ function buildToolbar() {
             if (showContents) {
                 $toolbar.find('.contents').removeClass('contents-show');
             }
+        } else {
+            $toolbar.find('.bars').addClass('bars-show');
+            $toolbar.find('.up').addClass('up-show');
+            $toolbar.find('.mode').addClass('mode-show');
+            $toolbar.find('.skin').addClass('skin-show');
+            if (showContents) {
+                $toolbar.find('.contents').addClass('contents-show');
+            }
         }
-        show = !show;
     });
 
     $toolbar.find('.up').click(() => {
@@ -86,24 +85,17 @@ function buildToolbar() {
         $skinPopup.slideToggle();
     });
 
-    skinPopEl.addEventListener('click', function(ev) {
-        ev.stopPropagation()
-        if (ev.target.nodeName === 'BUTTON') {
-            console.log(ev);
-            var theme = ev.target.dataset.theme;
+    skinPopEl.addEventListener('click', function(e) {
+        e.stopPropagation()
+        if (e.target.nodeName === 'BUTTON') {
+            var theme = e.target.dataset.theme;
             sessionStorage.setItem(themeKey, theme);
             $('html').attr('theme', theme);
         }
     })
 
-    document.addEventListener('click', function(ev) {
-        if (skinPopEl && skinPopEl.style.display === 'block') {
-            skinPopEl.style.display = 'none';
-        }
-    })
-
-    let showcontents = false;
-    $toolbar.find('.contents').click(() => {
+    $toolbar.find('.contents').click(function(e) {
+        e.stopPropagation();
         $('.esa-contents').toggleClass(function () {
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
@@ -114,14 +106,39 @@ function buildToolbar() {
             }
         });
 
-        if (!showcontents) {
-            $('#home').css({ "width": "calc(100% - 252px)"});
-            showcontents = true;
-        } else {
+        if (document.body.clientWidth <= 1259) {
             $('#home').css({ "width": "100%" });
-            showcontents = false;
+        } else {
+            if ($('.esa-contents').hasClass('active')) {
+                $('#home').css({ "width": "calc(100% - 252px)"});
+            } else {
+                $('#home').css({ "width": "100%" });
+            }
         }
     });
+
+    document.addEventListener('click', function () {
+        if (skinPopEl && skinPopEl.style.display === 'block') {
+            skinPopEl.style.display = 'none';
+        }
+        if (document.body.clientWidth <= 1259) {
+            if ($('.esa-contents').hasClass('active')) {
+                $('.esa-contents').removeClass('active');
+                $('.esa-contents').addClass('noactive');
+                $('#home').css({ "width": "100%" });
+            }
+
+            if ($('.bars').hasClass('bars-show')) {
+                $toolbar.find('.bars').removeClass('bars-show');
+                $toolbar.find('.up').removeClass('up-show');
+                $toolbar.find('.mode').removeClass('mode-show');
+                $toolbar.find('.skin').removeClass('skin-show');
+                if (showContents) {
+                    $toolbar.find('.contents').removeClass('contents-show');
+                }
+            }
+        }
+    })
 
     if (isPostPage()) {
         $toolbar.find('.bars').trigger('click');
