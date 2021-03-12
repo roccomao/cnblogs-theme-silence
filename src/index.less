@@ -82,9 +82,6 @@ fieldset,
 img {
   border: 0;
 }
-ul {
-  word-break: break-all;
-}
 li {
   list-style: none;
 }
@@ -391,6 +388,7 @@ a {
 
 #sideBarMain ul {
   line-height: 1.6;
+  word-break: break-all;
 }
 
 .catListTitle {
@@ -802,10 +800,26 @@ a {
       position: relative;
     }
 
+    ol {
+      padding-left: 30px;
+    }
+
     ul,
     ol {
+      margin-top: 13px;
+      margin-bottom: 13px;
+
       li {
         margin: 3px 0px;
+
+        ul, ol {
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+        }
+
+        ol > li {
+          list-style-type: decimal;
+        }
       }
     }
 
@@ -865,6 +879,10 @@ a {
     #BlogPostCategory,
     #EntryTag {
       font-size: 14px;
+      line-height: 2.2;
+      padding-left: 65px;
+      text-indent: -55px;
+
       a {
         font-size: 13px;
         border-radius: 4px;
@@ -873,6 +891,7 @@ a {
         margin-right: 5px;
         transform: none;
         color: var(--text-color);
+        white-space: nowrap;
 
         &:hover {
           color: #fff;
@@ -883,6 +902,10 @@ a {
           content: none;
         }
       }
+    }
+
+    #BlogPostCategory {
+      margin-bottom: 3px;
     }
 
     #BlogPostCategory:before {
