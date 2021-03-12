@@ -140,6 +140,20 @@ function buildToolbar() {
         }
     })
 
+    document.addEventListener('scroll', function () {
+        if (document.body.clientWidth <= 1259) {
+            if ($('.bars').hasClass('bars-show')) {
+                $toolbar.find('.bars').removeClass('bars-show');
+                $toolbar.find('.up').removeClass('up-show');
+                $toolbar.find('.mode').removeClass('mode-show');
+                $toolbar.find('.skin').removeClass('skin-show');
+                if (showContents) {
+                    $toolbar.find('.contents').removeClass('contents-show');
+                }
+            }
+        }
+    })
+
     if (isPostPage()) {
         $toolbar.find('.bars').trigger('click');
     }
