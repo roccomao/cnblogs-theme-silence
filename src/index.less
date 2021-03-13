@@ -783,7 +783,7 @@ a {
     }
 
     strong {
-      margin: 0 3px;
+      margin: 0;
       font-weight: 500;
     }
 
@@ -859,21 +859,40 @@ a {
     h4 code,
     h5 code,
     h6 code,
-    p > code,
-    li > code,
+    p code,
+    li code,
     table code {
       line-height: 1.2;
-      font-family: consolas !important;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
       vertical-align: middle;
       margin: 0 3px;
       color: var(--theme-color);
       background-color: var(--code-bg-color) !important;
-      font-size: 14px !important;
       padding: 0.2em 0.3em !important;
       border-radius: 3px !important;
       border: none !important;
       display: inline;
       white-space: pre-wrap;
+    }
+
+    h1 code,
+    h2 code {
+      font-size: 18px !important;
+    }
+    h3 code {
+      font-size: 17px !important;
+    }
+    h4 code {
+      font-size: 16px !important;
+    }
+    h5 code,
+    h6 code {
+      font-size: 15px !important;
+    }
+    p code,
+    li code,
+    table code {
+      font-size: 14px !important;
     }
 
     #BlogPostCategory,
@@ -1036,6 +1055,14 @@ a {
 
   .comment_vote {
     margin-top: 12px;
+
+    .comment_digg {
+      padding-right: 10px;
+    }
+
+    .comment_burry {
+      display: none;
+    }
   }
 }
 
@@ -1059,10 +1086,10 @@ a {
     width: 100%;
 
     tr td {
-      padding: 5px 10px 5px 0px;
+      padding: 5px 0px 5px 10px;
 
-      &:last-child {
-        padding-right: 0px;
+      &:first-child {
+        padding-left: 0px;
       }
 
       .small {
