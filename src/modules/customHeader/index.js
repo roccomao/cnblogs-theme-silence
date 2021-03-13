@@ -41,7 +41,8 @@ function buildCustomHeader() {
     });
 
     $('#header').prepend(`<div class="esa-mobile-menu"><i class="fa fa-bars"></i></div>`);
-    $('.esa-mobile-menu').on('click', () => {
+    $('.esa-mobile-menu').on('click', (e) => {
+        e.stopPropagation();
         $('#navigator').fadeToggle();
     });
 

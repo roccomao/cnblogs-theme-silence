@@ -48,6 +48,7 @@ function buildToolbar() {
     const $toolbar = $('.esa-toolbar');
     const $skinPopup = $('.skin-popup');
     var skinPopEl = document.getElementsByClassName('skin-popup')[0];
+    var navigatorE1 = document.getElementById('navigator');
 
     $toolbar.find('.bars').click(function(e) {
         e.stopPropagation();
@@ -119,8 +120,15 @@ function buildToolbar() {
 
     document.addEventListener('click', function () {
         if (skinPopEl && skinPopEl.style.display === 'block') {
-            skinPopEl.style.display = 'none';
+            $skinPopup.slideUp();
         }
+
+        if (document.body.clientWidth < 990) {
+            if (navigatorE1.style.display === 'block') {
+                $('#navigator').fadeOut();
+            }
+        }
+
         if (document.body.clientWidth <= 1259) {
             if ($('.esa-contents').hasClass('active')) {
                 $('.esa-contents').removeClass('active');

@@ -84,6 +84,20 @@ function buildPostContents() {
         catalogContents += `</ul>`;
 
         $('.esa-contents').append(catalogContents);
+
+        $('.esa-contents').mouseenter(function () {
+            if ($('.esa-contents').hasClass('active') && document.body.clientWidth > 1259) {
+                if ( !($toolbar.find('.bars').hasClass('bars-show')) ) {
+                    $toolbar.find('.bars').addClass('bars-show');
+                    $toolbar.find('.up').addClass('up-show');
+                    $toolbar.find('.mode').addClass('mode-show');
+                    $toolbar.find('.skin').addClass('skin-show');
+                    if (isPostPage()) {
+                        $toolbar.find('.contents').addClass('contents-show');
+                    }
+                }
+            }
+        });
     }
 }
 
