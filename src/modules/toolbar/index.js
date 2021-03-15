@@ -166,6 +166,8 @@ function buildToolbar() {
             } else {
                 $('#header').css('opacity', 1);
             }
+        } else {
+            $('#header').css('opacity', 1);
         }
     });
 
