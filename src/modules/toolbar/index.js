@@ -158,6 +158,15 @@ function buildToolbar() {
                 $toolbar.find('.contents').removeClass('contents-show');
             }
         }
+
+        if (document.body.clientWidth < 990 && isPostPage()) {
+            var top = document.documentElement.scrollTop || document.body.scrollTop;
+            if (top > 60) {
+                $('#header').css('opacity', 0);
+            } else {
+                $('#header').css('opacity', 1);
+            }
+        }
     });
 
     if (isPostPage()) {
