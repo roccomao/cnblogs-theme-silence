@@ -69,7 +69,7 @@ function buildPostContents() {
             }
 
             catalogContents +=
-                `<li class="${tagName}" title="${text}">
+                `<li class="${tagName}">
                     <a class="esa-anchor-link" href="#${id}">${(titleIndex + titleContent)}</a>
                  </li>`;
 
