@@ -9,7 +9,23 @@
   position: relative;
   border-radius: 4px;
   border-left-color: var(--theme-color);
-  
+
+  &::before {
+    content: '!';
+    background-color: var(--theme-color);
+    position: absolute;
+    top: 25px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
   p {
     margin: 0 !important;
   }

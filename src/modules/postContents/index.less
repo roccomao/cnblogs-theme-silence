@@ -22,17 +22,34 @@
       text-overflow: ellipsis;
       cursor: pointer;
       color: var(--text-color);
+      font-weight: 400;
+
+      a {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &.catalog-active a {
+        color: var(--theme-color);
+        font-weight: bold;
+      }
 
       .level1 {
         margin-left: 0px;
+        font-size: 16px;
       }
 
       .level2 {
         margin-left: 10px;
+        font-size: 15px;
       }
 
       .level3 {
         margin-left: 26px;
+        font-size: 14px;
       }
     }
   }

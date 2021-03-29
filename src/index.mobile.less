@@ -121,6 +121,17 @@
 
       .postBody {
         padding: 0px !important;
+
+        table::-webkit-scrollbar {
+          height: 2px !important;
+        }
+
+        .cnblogs-markdown .hljs,
+        .cnblogs-markdown .hljsln {
+          &::-webkit-scrollbar {
+            height: 2px !important;
+          }
+        }
       }
 
       .postDesc {

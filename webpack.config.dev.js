@@ -62,6 +62,7 @@ module.exports = {
             '@': path.resolve('src'),
             '@modules': path.resolve('src/modules'),
             '@consts': path.resolve('src/consts'),
+            '@utils': path.resolve('src/utils'),
             '@templates': path.resolve('src/templates')
         },
     },

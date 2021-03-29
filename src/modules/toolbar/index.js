@@ -1,6 +1,11 @@
 import "./index.less";
 import { isPostPage } from '@consts/tools';
 import options from '@/consts/options';
+import {
+    throttle,
+    hasPostTitle,
+    getClientRect
+} from '@utils/tools';
 
 function buildToolbar() {
     $('body').append(`<div class="esa-toolbar">
@@ -148,28 +153,47 @@ function buildToolbar() {
         }
     });
 
-    document.addEventListener('scroll', function () {
-        if ($('.bars').hasClass('bars-show')) {
-            $toolbar.find('.bars').removeClass('bars-show');
-            $toolbar.find('.up').removeClass('up-show');
-            $toolbar.find('.mode').removeClass('mode-show');
-            $toolbar.find('.skin').removeClass('skin-show');
-            if (showContents) {
-                $toolbar.find('.contents').removeClass('contents-show');
+    document.addEventListener('scroll', throttle(
+        function () {
+            if ($('.bars').hasClass('bars-show')) {
+                $toolbar.find('.bars').removeClass('bars-show');
+                $toolbar.find('.up').removeClass('up-show');
+                $toolbar.find('.mode').removeClass('mode-show');
+                $toolbar.find('.skin').removeClass('skin-show');
+                if (showContents) {
+                    $toolbar.find('.contents').removeClass('contents-show');
+                }
             }
-        }
 
-        if (document.body.clientWidth < 990 && isPostPage()) {
-            var top = document.documentElement.scrollTop || document.body.scrollTop;
-            if (top > 60) {
-                $('#header').css('opacity', 0);
+            if (document.body.clientWidth < 990 && isPostPage()) {
+                var top = document.documentElement.scrollTop || document.body.scrollTop;
+                if (top > 60) {
+                    $('#header').css('opacity', 0);
+                } else {
+                    $('#header').css('opacity', 1);
+                }
             } else {
                 $('#header').css('opacity', 1);
             }
-        } else {
-            $('#header').css('opacity', 1);
-        }
-    });
+
+            if (showContents && hasPostTitle()) {
+                for (let i = $('.esa-contents ul li').length - 1; i >= 0; i--) {
+                    const titleId = $($('.esa-contents ul li')[i]).find('a').attr('href').replace(/[#]/g, '');
+                    const postTitle = document.querySelector(`#cnblogs_post_body [id='${titleId}']`);
+                    if (getClientRect(postTitle).top <= 100) {
+                        if ( $($('.esa-contents ul li')[i]).hasClass('catalog-active') ) {
+                            return;
+                        }
+                        $($('.esa-contents ul li')[i]).addClass('catalog-active');
+                        $($('.esa-contents ul li')[i]).siblings().removeClass('catalog-active');
+                        return;
+                    }
+                }
+            }
+        },
+        50,
+        1000 / 60
+    ));
 
     if (isPostPage()) {
         $toolbar.find('.bars').trigger('click');
