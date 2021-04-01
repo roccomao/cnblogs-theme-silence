@@ -5,6 +5,7 @@ import buildGithubCorner from '@modules/githubCorner';
 import buildCustomHeader from '@modules/customHeader';
 import buildCustomFooter from '@modules/customFooter';
 import buildProfile from '@modules/profile';
+import buildMainElements from '@modules/postMessage';
 import buildPostContents from '@modules/postContents';
 import buildPostLightbox from '@modules/postLightbox';
 import buildHljsLineNumber from '@modules/hljsLineNumber';
@@ -34,6 +35,7 @@ class Silence {
         buildProfile();
         buildToolbar();
         if (isPostPage()) {
+            buildMainElements();
             buildPostContents();
             buildPostLightbox();
             buildHljsLineNumber();
