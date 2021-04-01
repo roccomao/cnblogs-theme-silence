@@ -21,6 +21,14 @@ function buildHljsLineNumber() {
             }
         }
     });
+
+    $('pre').on('dblclick', 'code', function() {
+        const sel = window.getSelection();
+        const range = document.createRange();
+        sel.removeAllRanges();
+        range.selectNode($(this)[0]);
+        sel.addRange(range);
+    });
 }
 
 function addLineNumbersFor(html) {
