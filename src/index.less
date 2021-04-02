@@ -1148,9 +1148,13 @@ a {
 #div_digg {
   margin: 0;
   width: auto;
+  text-align: center;
 
   .diggit,
-  .buryit {
+  .buryit,
+  .custom-focus {
+    text-align: center;
+    cursor: pointer;
     background: none;
     height: auto;
     width: auto;
@@ -1174,11 +1178,21 @@ a {
   }
 
   .diggit {
-    float: right;
+    float: left;
     margin-right: 15px;
 
     &::before {
       content: "\f087";
+      font-family: FontAwesome;
+      opacity: 0.7;
+    }
+  }
+
+  .custom-focus {
+    float: right;
+
+    &::before {
+      content: "\f08a";
       font-family: FontAwesome;
       opacity: 0.7;
     }
@@ -1194,11 +1208,15 @@ a {
       opacity: 0.7;
     }
   }
+
+  .diggword {
+    display: none;
+  }
 }
 
 #nav_next_page,
 #homepage_bottom_pager {
-  margin-bottom: 90px;
+  margin-bottom: 100px;
 }
 
 .topicListFooter {

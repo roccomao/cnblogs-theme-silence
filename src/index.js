@@ -5,7 +5,6 @@ import buildGithubCorner from '@modules/githubCorner';
 import buildCustomHeader from '@modules/customHeader';
 import buildCustomFooter from '@modules/customFooter';
 import buildProfile from '@modules/profile';
-import buildMainElements from '@modules/postMessage';
 import buildPostContents from '@modules/postContents';
 import buildPostLightbox from '@modules/postLightbox';
 import buildHljsLineNumber from '@modules/hljsLineNumber';
@@ -14,6 +13,7 @@ import buildPostSponsor from '@modules/postSponsor';
 import buildPostCommentAvatars from '@modules/postCommentAvatars';
 import buildToolbar from '@modules/toolbar';
 import loader from '@modules/loader';
+import { buildMainElements, buildFocusBtn } from '@modules/postMessage';
 
 class Silence {
     constructor() {
@@ -41,6 +41,7 @@ class Silence {
             buildHljsLineNumber();
             buildPostSignature();
             buildPostSponsor();
+            buildFocusBtn();
             buildPostCommentAvatars();
         } else {
             showSidebar();
