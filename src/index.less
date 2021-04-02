@@ -972,6 +972,9 @@ a {
 
     #post_next_prev {
       font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
@@ -1087,10 +1090,6 @@ a {
   .comment_vote {
     margin-top: 12px;
 
-    .comment_digg {
-      padding-right: 10px;
-    }
-
     .comment_burry {
       display: none;
     }
@@ -1146,7 +1145,7 @@ a {
 }
 
 #div_digg {
-  margin: 0;
+  margin: 20px 0px;
   width: auto;
   text-align: center;
 
@@ -1179,7 +1178,6 @@ a {
 
   .diggit {
     float: left;
-    margin-right: 15px;
 
     &::before {
       content: "\f087";
@@ -1190,6 +1188,7 @@ a {
 
   .custom-focus {
     float: right;
+    margin-left: 15px;
 
     &::before {
       content: "\f08a";
