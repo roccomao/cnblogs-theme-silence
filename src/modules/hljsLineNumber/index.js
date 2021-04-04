@@ -2,7 +2,7 @@ import "./index.less";
 import options from '@/consts/options';
 
 function buildHljsLineNumber() {
-    let $codes = $('.postBody .cnblogs-markdown').find('pre code');
+    let $codes = $('.cnblogs-markdown').find('pre code');
     if (!$codes.length) {
         return false;
     }
@@ -22,7 +22,7 @@ function buildHljsLineNumber() {
         }
     });
 
-    $('pre').on('dblclick', 'code', function() {
+    $('.cnblogs-markdown pre').on('dblclick', 'code', function() {
         const sel = window.getSelection();
         const range = document.createRange();
         sel.removeAllRanges();

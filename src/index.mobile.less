@@ -17,6 +17,14 @@
   #bannerbar {
     display: none;
   }
+  #navList {
+    #blog_nav_rss {
+      display: block !important;
+    }
+    #blog_nav_newpost {
+      display: block !important;
+    }
+  }
   .esa-mobile-menu {
     display: block !important;
   }
@@ -122,17 +130,6 @@
       .postBody {
         padding: 0px !important;
 
-        table::-webkit-scrollbar {
-          height: 2px !important;
-        }
-
-        .cnblogs-markdown .hljs,
-        .cnblogs-markdown .hljsln {
-          &::-webkit-scrollbar {
-            height: 2px !important;
-          }
-        }
-
         #post_next_prev {
           margin-bottom: 20px;
         }
@@ -158,6 +155,30 @@
       .day .postDesc,
       .entrylist .entrylistItemPostDesc {
         display: none;
+      }
+    }
+
+    #cnblogs_post_body img,
+    .blog_comment_body img {
+      max-width: 100% !important;
+      height: auto;
+    }
+
+    .forFlow .postBody,
+    .blog_comment_body {
+      table {
+        max-height: none;
+
+        &::-webkit-scrollbar {
+          height: 2px !important;
+        }
+      }
+    }
+
+    .cnblogs-markdown .hljs,
+    .cnblogs-markdown .hljsln {
+      &::-webkit-scrollbar {
+        height: 2px !important;
       }
     }
   }
