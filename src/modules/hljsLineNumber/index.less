@@ -1,16 +1,16 @@
-@hl-base: #2b2b2b;
-@hl-mono-1: #bababa;
-@hl-mono-3: #5c6370;
-@hl-hue-1: #56b6c2;
-@hl-hue-2: #61aeee;
-@hl-hue-3: #c678dd;
-@hl-hue-4: #98c379;
-@hl-hue-5: #e06c75;
-@hl-hue-6: #d19a66;
-@hl-hue-6-2: #e6c07b;
-@hl-tag: #7171bf;
-@hl-ln-bg: #333333;
-@hl-ln-num: #777777;
+@hl-base: var(--hl-base);
+@hl-mono-1: var(--hl-mono-1);
+@hl-mono-3: var(--hl-mono-3);
+@hl-hue-1: var(--hl-hue-1);
+@hl-hue-2: var(--hl-hue-2);
+@hl-hue-3: var(--hl-hue-3);
+@hl-hue-4: var(--hl-hue-4);
+@hl-hue-5: var(--hl-hue-5);
+@hl-hue-6: var(--hl-hue-6);
+@hl-hue-6-2: var(--hl-hue-6-2);
+@hl-tag: var(--hl-tag);
+@hl-ln-bg: @hl-base;
+@hl-ln-num: #999999;
 @hl-bar-thumb: #b8b8b8;
 
 .cnblogs-markdown .hljs,
@@ -47,7 +47,7 @@
   width: 2.4em;
   height: 100%;
   background: @hl-ln-bg;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 0px;
 }
 
 .ln-num {
