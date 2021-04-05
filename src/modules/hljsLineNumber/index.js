@@ -21,14 +21,6 @@ function buildHljsLineNumber() {
             }
         }
     });
-
-    $('.cnblogs-markdown pre').on('dblclick', 'code', function() {
-        const sel = window.getSelection();
-        const range = document.createRange();
-        sel.removeAllRanges();
-        range.selectNode($(this)[0]);
-        sel.addRange(range);
-    });
 }
 
 function addLineNumbersFor(html) {
@@ -44,6 +36,16 @@ function addLineNumbersFor(html) {
     html = '<span class="ln-num" data-num="1"></span>' + html;
     html = '<span class="ln-bg"></span>' + html;
     return html;
+}
+
+export function buildCodeSelection() {
+    $(document).on('dblclick', 'code', function() {
+        const sel = window.getSelection();
+        const range = document.createRange();
+        sel.removeAllRanges();
+        range.selectNode($(this)[0]);
+        sel.addRange(range);
+    });
 }
 
 export default buildHljsLineNumber;

@@ -13,6 +13,7 @@ import buildPostSponsor from '@modules/postSponsor';
 import buildPostCommentAvatars from '@modules/postCommentAvatars';
 import buildToolbar from '@modules/toolbar';
 import loader from '@modules/loader';
+import { buildCodeSelection } from '@modules/hljsLineNumber';
 import { buildMainElements, buildFocusBtn } from '@modules/postMessage';
 
 class Silence {
@@ -37,12 +38,13 @@ class Silence {
         if (isPostPage()) {
             buildMainElements();
             buildPostContents();
-            buildPostLightbox();
-            buildHljsLineNumber();
             buildPostSignature();
             buildPostSponsor();
             buildFocusBtn();
             buildPostCommentAvatars();
+            buildCodeSelection();
+            buildHljsLineNumber();
+            buildPostLightbox();
         } else {
             showSidebar();
         }
