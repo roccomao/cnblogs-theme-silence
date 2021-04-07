@@ -36,13 +36,13 @@ class Silence {
         buildProfile();
         buildToolbar();
         if (isPostPage()) {
+            buildCodeSelection();
             buildMainElements();
             buildPostContents();
             buildPostSignature();
             buildPostSponsor();
             buildFocusBtn();
             buildPostCommentAvatars();
-            buildCodeSelection();
             buildHljsLineNumber();
             buildPostLightbox();
         } else {

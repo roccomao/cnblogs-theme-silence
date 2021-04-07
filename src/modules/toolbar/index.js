@@ -1,11 +1,7 @@
 import "./index.less";
-import { isPostPage } from '@consts/tools';
 import options from '@/consts/options';
-import {
-    throttle,
-    hasPostTitle,
-    getClientRect
-} from '@utils/tools';
+import { isPostPage } from '@consts/tools';
+import { throttle, getClientRect } from '@utils/tools';
 
 function buildToolbar() {
     $('body').append(`<div class="esa-toolbar">
@@ -33,6 +29,7 @@ function buildToolbar() {
         </div>
     </div>`);
 
+    const headerLevels = options.catalog.levels.join(',');
     const showContents = isPostPage() && options.catalog.enable;
 
     if (showContents) {
@@ -176,7 +173,7 @@ function buildToolbar() {
                 $('#header').css('opacity', 1);
             }
 
-            if (showContents && hasPostTitle()) {
+            if (showContents && $('#cnblogs_post_body').find(headerLevels).length > 0) {
                 for (let i = $('.esa-contents ul li').length - 1; i >= 0; i--) {
                     const titleId = $($('.esa-contents ul li')[i]).find('a').attr('href').replace(/[#]/g, '');
                     const postTitle = document.querySelector(`#cnblogs_post_body [id='${titleId}']`);

@@ -18,7 +18,9 @@ function buildPostContents() {
 
         $('body').append(`<div class="esa-contents noactive"></div>`);
 
-        if (config.active) {
+        if ( config.active ||
+            (document.body.clientWidth > 1259 && $('#cnblogs_post_body').find('.post-contents-active').length > 0)
+        ) {
             $toolbar.find('.contents').trigger('click');
         }
 
