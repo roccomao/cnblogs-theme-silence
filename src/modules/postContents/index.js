@@ -21,7 +21,7 @@ function buildPostContents() {
         if ( config.active ||
             (document.body.clientWidth > 1259 && $('#cnblogs_post_body').find('.post-contents-active').length > 0)
         ) {
-            $toolbar.find('.contents').trigger('click');
+            $toolbar.find('.contents').triggerHandler('click');
         }
 
         let h1c = 0;

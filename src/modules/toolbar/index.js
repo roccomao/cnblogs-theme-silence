@@ -162,7 +162,7 @@ function buildToolbar() {
                 }
             }
 
-            if (document.body.clientWidth < 990 && isPostPage()) {
+            if (isPostPage() && document.body.clientWidth < 990) {
                 var top = document.documentElement.scrollTop || document.body.scrollTop;
                 if (top > 60) {
                     $('#header').css('opacity', 0);
@@ -192,8 +192,8 @@ function buildToolbar() {
         1000 / 60
     ));
 
-    if (isPostPage()) {
-        $toolbar.find('.bars').trigger('click');
+    if (isPostPage() && document.body.clientWidth > 990) {
+        $toolbar.find('.bars').triggerHandler('click');
     }
 }
 
