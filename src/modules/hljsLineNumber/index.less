@@ -19,7 +19,7 @@
   overflow-x: auto;
   background: @hl-base !important;
   border: none !important;
-  color: @hl-mono-1;
+  color: @hl-mono-1 !important;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
   font-size: 15px !important;
   white-space: pre;
@@ -51,8 +51,8 @@
   left: 0;
   width: 2.4em;
   height: 100%;
-  background: @hl-ln-bg;
-  border-radius: 0px;
+  background: @hl-ln-bg !important;
+  border-radius: 0px !important;
 }
 
 .ln-num {
@@ -70,7 +70,7 @@
   user-select: none;
 
   &::before {
-    color: @hl-ln-num;
+    color: @hl-ln-num !important;
     font-style: normal;
     font-weight: normal;
     text-align: center;
@@ -80,18 +80,18 @@
 
 .hljs-comment,
 .hljs-quote {
-  color: @hl-mono-3;
-  font-style: normal;
+  color: @hl-mono-3 !important;
+  font-style: normal !important;
 }
 
 .hljs-tag {
-  color: @hl-tag;
+  color: @hl-tag !important;
 }
 
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
-  color: @hl-hue-3;
+  color: @hl-hue-3 !important;
 }
 
 .hljs-section,
@@ -99,11 +99,11 @@
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-  color: @hl-hue-5;
+  color: @hl-hue-5 !important;
 }
 
 .hljs-literal {
-  color: @hl-hue-1;
+  color: @hl-hue-1 !important;
 }
 
 .hljs-string,
@@ -111,23 +111,24 @@
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-  color: @hl-hue-4;
+  color: @hl-hue-4 !important;
 }
 
 .hljs-built_in,
 .hljs-class .hljs-title {
-  color: @hl-hue-6-2;
+  color: @hl-hue-6-2 !important;
 }
 
 .hljs-attr,
 .hljs-variable,
+.hljs-template-tag,
 .hljs-template-variable,
 .hljs-type,
 .hljs-selector-class,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-number {
-  color: @hl-hue-6;
+  color: @hl-hue-6 !important;
 }
 
 .hljs-symbol,
@@ -136,17 +137,17 @@
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-  color: @hl-hue-2;
+  color: @hl-hue-2 !important;
 }
 
 .hljs-emphasis {
-  font-style: normal;
+  font-style: normal !important;
 }
 
 .hljs-strong {
-  font-weight: bold;
+  font-weight: normal !important;
 }
 
 .hljs-link {
-  text-decoration: underline;
+  text-decoration: none !important;
 }
