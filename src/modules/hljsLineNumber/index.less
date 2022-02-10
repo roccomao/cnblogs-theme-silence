@@ -13,6 +13,10 @@
 @hl-ln-num: #999999;
 @hl-bar-thumb: #b8b8b8;
 
+.cnb-code-toolbar {
+  display: none;
+}
+
 .cnblogs-markdown .hljs,
 .cnblogs-markdown .hljsln {
   display: block;
@@ -144,7 +148,15 @@
   font-style: normal !important;
 }
 
-.hljs-strong {
+.hljs-strong,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
   font-weight: normal !important;
 }
 
