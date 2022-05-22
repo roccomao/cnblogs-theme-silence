@@ -6,7 +6,7 @@ function buildPostSignature() {
     if (config.enable) {
         $('#cnblogs_post_body').after(`<div id="custom-post-signature"></div>`);
         const postUrl = $('#cb_post_title_url').attr('href');
-        const authorName = config.author || $('#profile_block a').eq(0).html();
+        const authorName = config.author || currentBlogApp;
         const content =
             `<div class="esa-post-signature">
                 <p>作者：${$.trim(authorName) || ''}</p>

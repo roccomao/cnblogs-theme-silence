@@ -8,10 +8,10 @@ function buildToolbar() {
         <div class="bars"><i class="fa fa-ellipsis-h"></i></div>
         <span class="up" title="返回顶部"><i class="fa fa-chevron-up"></i></span>
         <span class="mode" title="切换模式"><i class="fa fa-adjust"></i></span>
-        <span class="skin" title="主题设置"><i class="fa fa-cog"></i></span>
+        <span class="skin" title="切换主题"><i class="fa fa-cog"></i></span>
         <div class="skin-popup">
             <div class="item">
-                <div class="title">主题色彩</div>
+                <div class="title">选择主题</div>
                 <div class="themes">
                     <button data-theme="a" style="background: #2D8CF0;"></button>
                     <button data-theme="b" style="background: #FA7298;"></button>
@@ -33,7 +33,7 @@ function buildToolbar() {
     const showContents = isPostPage() && options.catalog.enable;
 
     if (showContents) {
-        $('.esa-toolbar').append(`<span class="contents" title="阅读目录"><i class="fa fa-list-ul"></i></span>`);
+        $('.esa-toolbar').append(`<span class="contents" title="目录导航"><i class="fa fa-list-ul"></i></span>`);
     }
 
     const modeKey = `silence-mode-${currentBlogApp}`;
