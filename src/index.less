@@ -769,6 +769,10 @@ a {
       position: relative;
       word-break: break-all;
 
+      &[data-lightbox="roadtrip"]:after {
+        height: 0 !important;
+      }
+
       &:after {
         content: "";
         display: block;
@@ -1175,6 +1179,10 @@ a {
     position: relative;
     word-break: break-all;
     font-weight: bold;
+
+    &[data-lightbox="roadtrip"]:after {
+      height: 0 !important;
+    }
 
     &:after {
       content: "";
