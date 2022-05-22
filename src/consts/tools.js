@@ -12,4 +12,3 @@ export function showSidebar() {
     $('.forFlow').css({ marginLeft: '260px' });
     $('#sideBar').show();
 }
-
