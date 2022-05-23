@@ -3,6 +3,7 @@ import "./index.less";
 function buildPostCommentAvatars() {
     const postCommentBody = '.feedbackItem > .feedbackCon > .blog_comment_body';
     const builder = () => {
+        $(postCommentBody).addClass('comment-with-avatar');
         $(postCommentBody).before(`<div class='esa-comment-avatar'><a target='_blank'><img /></a></div>`);
         let $feedbackContents =$('.feedbackItem > .feedbackCon');
         $.each($feedbackContents, function(index, feedbackContent){
