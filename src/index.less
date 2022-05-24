@@ -856,6 +856,20 @@ a {
         0 0 1px rgba(106, 115, 125, 0.35);
     }
 
+    details {
+      display: block;
+      margin: 13px 0;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 3px;
+      background-color: var(--panel-bg-color);
+
+      & > summary {
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
     .cnblogs-markdown pre {
       white-space: pre;
       position: relative;
@@ -1111,12 +1125,20 @@ a {
   padding: 15px 0;
 }
 
-.louzhu {
-  color: var(--theme-color);
-  font-weight: 500;
-}
-
 .feedbackListSubtitle {
+  .louzhu {
+    color: var(--theme-color);
+  }
+
+  .layer {
+    margin-right: 5px;
+  }
+
+  & > a:last-of-type {
+    margin-left: 5px;
+    color: var(--theme-color);
+  }
+
   .sendMsg2This {
     background: transparent;
     padding-left: 0px;
