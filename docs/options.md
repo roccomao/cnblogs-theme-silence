@@ -119,7 +119,7 @@ window.$silence = {
 
 该配置项用来在导航栏中追加自定义菜单项。
 
-注意目前仅支持到二级菜单，一级菜单项通过`chilren`属性配置纵向悬浮二级菜单。若希望链接页面总是在一个新打开的窗口中载入，则需要在菜单项中多配置一个值为`'_blank'`的`target`属性。
+注意目前仅支持到二级菜单，一级菜单项通过`children`属性配置纵向悬浮二级菜单。若希望链接页面总是在一个新打开的窗口中载入，则需要在菜单项中多配置一个值为`'_blank'`的`target`属性。
 
 ```js
 window.$silence = {
@@ -128,7 +128,7 @@ window.$silence = {
         url: 'https://www.cnblogs.com/esofar/tag/'
     }, {
         title: '朋友',
-        chilren: [{
+        children: [{
             title: '百度',
             target: '_blank',
             url: 'https://www.baidu.com',
@@ -192,7 +192,7 @@ window.$silence = {
 
 其属性详细介绍参考如下：
 
-**enable** 
+**enable**
 
 - 类型：`Boolean`
 - 默认值：`false`
