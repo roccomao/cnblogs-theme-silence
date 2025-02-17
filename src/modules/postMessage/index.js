@@ -4,18 +4,12 @@ import { follow } from '@utils/cnblog';
 
 export function buildMainElements() {
     const date = $('#post-date').text();
-    const viewCount = $('#post_view_count').text();
-    const commentCount = $('#post_comment_count').text();
-    const diggCount = $('#digg_count').text();
     const authorName = options.signature.author || $('#profile_block a').eq(0).html();
 
     $('#topics .postTitle').after(`
     <div id='custom-post-message'>
-        <span>${date}</span>
-        <span>&nbsp;${$.trim(authorName) || ''}&nbsp;</span>
-        <span class='view-msg'>阅读 ${viewCount}</span>
-        <span class='comment-msg'>评论 ${commentCount}</span>
-        <span class='digg-msg'>推荐 ${diggCount}</span>
+        <span><em>Posted @ ${date}</em></span>
+        <span>&nbsp;${$.trim(authorName) || ''}</span>
     </div>`);
 }
 
