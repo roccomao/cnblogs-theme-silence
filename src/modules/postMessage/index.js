@@ -12,13 +12,13 @@ export function buildMainElements() {
         <span><em>Posted @ ${date}</em></span>
         <span>&nbsp;${$.trim(authorName) || ''}</span>
     </div>`);
+    $('#cnblogs_post_body').after(`<a name="post-info"></a>`);
 }
 
 export function buildFocusBtn() {
     poll(() => $('#green_channel_follow').length && $('#div_digg .clear').length, () => {
         const followState = window.isBlogOwner || ($('#green_channel #green_channel_follow').text().trim() === '已关注');
 
-        $('#blog_post_info_block').before(`<a name="post-info"></a>`);
         $('#div_digg .clear').before(`
         <div class='custom-focus${followState ? ' followMe' : ''}'>
             <span>关注</span>
