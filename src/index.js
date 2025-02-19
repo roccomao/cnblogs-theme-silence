@@ -41,10 +41,10 @@ class Silence {
             buildPostContents();
             buildPostSignature();
             buildPostSponsor();
-            buildFocusBtn();
             buildPostCommentAvatars();
             buildHljsLineNumber();
             buildPostLightbox();
+            buildFocusBtn();
         } else {
             showSidebar();
         }

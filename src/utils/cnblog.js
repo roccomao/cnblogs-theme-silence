@@ -1,4 +1,3 @@
-import { poll } from '@utils/tools'
 const { currentBlogApp } = window
 
 /**
@@ -46,21 +45,6 @@ function getFollowing() {
               .trim()
         : '未知'
     return count
-}
-
-/**
- * 是否已经关注
- * 在 post 页面无效，函数返回 undefined
- * 在 post 页面：【$('#p_b_follow').text().trim() === '-取消关注'】始终返回 false
- */
-function getFollowState() {
-    poll($('#p_b_follow').length, () => {
-        return (
-            $('#p_b_follow')
-                .text()
-                .trim() === '-取消关注'
-        )
-    })
 }
 
 /**
@@ -114,7 +98,6 @@ export {
     getBlogname,
     getFollowers,
     getFollowing,
-    getFollowState,
     getBlogAge,
     getCurrentPostUrl,
     getBlogUserGuid,

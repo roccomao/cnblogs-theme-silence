@@ -281,28 +281,34 @@ function unpass(show) {
 
 /**
  * @description 轮询
- * @param {condition} 条件
- * @param {func} 函数
- * @returns {Boolean} 是否完成 callback
+ * @param {function} 返回指定条件的函数
+ * @param {pollCallback} 回调函数
+ * @returns {boolean} 是否完成 pollCallback
  */
-function poll(condition, callback) {
-    if (condition) {
-        callback()
+function poll(conditionFn, callback) {
+    if (conditionFn()) {
+        const res = callback()
+        if (typeof res === 'boolean' || typeof res === 'string') {
+            return res
+        }
         return true
     } else {
         let count = 1
         let intervalId = setInterval(() => {
-            if (condition) {
-                callback()
+            if (conditionFn()) {
+                const res = callback()
+                if (typeof res === 'boolean' || typeof res === 'string') {
+                    return res
+                }
                 clearInterval(intervalId)
                 return true
             }
-            if (count === 30) {
+            if (count === 15) {
                 clearInterval(intervalId)
                 return false
             }
             count++
-        }, 100)
+        }, 500)
     }
 }
 
